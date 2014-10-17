@@ -1,1 +1,0 @@
-from tldextract import tldextract
