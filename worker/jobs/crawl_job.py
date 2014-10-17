@@ -316,6 +316,8 @@ class Crawl(Job):
 						page.build()
 						print page.url, page.depth
 						try:
+							print page.content
+							print page.is_relevant(self.woosh_query)
 							if page.is_relevant(self.woosh_query):
 								self.__db__.results.insert(page.pretty())
 								next_links = [{"url":link, "depth": doc['depth']+1} for link in page.outlinks]
